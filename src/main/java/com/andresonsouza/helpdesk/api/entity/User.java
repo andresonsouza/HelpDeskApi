@@ -21,7 +21,7 @@ public class User {
 	
 	private ProfileEnum pofile;
 
-	public ProfileEnum getPofile() {
+	public ProfileEnum getProfile() {
 		return pofile;
 	}
 
