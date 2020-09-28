@@ -13,7 +13,13 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
 
 	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusIgnoreCaseContainingAndPriorityIgnoreCaseContainingOrderByDateDesc(
 			String title, String status, String priority, Pageable pages);
-	
+
 	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusIgnoreCaseContainingAndPriorityIgnoreCaseContainingAndUserIdOrderByDateDesc(
 			String title, String status, String priority, Pageable pages);
+
+	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusIgnoreCaseContainingAndPriorityIgnoreCaseContainingAndAssingedUserIdOrderByDateDesc(
+			String title, String status, String priority, Pageable pages);
+
+	Page<Ticket> findByNumber(Integer number, Pageable pages);
+
 }
