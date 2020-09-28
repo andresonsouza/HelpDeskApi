@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.andresonsouza.helpdesk.api.enums.PriorityEnum;
 import com.andresonsouza.helpdesk.api.enums.StatusEnum;
@@ -34,6 +35,7 @@ public class Ticket {
 	
 	private String image;
 	
+	@Transient
 	private List<ChangeStatus> changes;
 
 	public String getId() {

@@ -13,7 +13,7 @@ import com.andresonsouza.helpdesk.api.repository.UserRepository;
 import com.andresonsouza.helpdesk.api.service.UserService;
 
 @Service
-public class UserServiceImlp implements UserService {
+public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserRepository userRepository;
