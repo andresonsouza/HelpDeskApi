@@ -2,21 +2,26 @@ package com.andresonsouza.helpdesk.api.entity;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.andresonsouza.helpdesk.api.enums.StatusEnum;
 
-@Entity(name = "Status")
+@Document
 public class ChangeStatus {
 
+	@Id
 	private String id;
-	
+
+	@DBRef
 	private Ticket ticket;
-	
+
+	@DBRef
 	private User userChange;
-	
+
 	private Date dateChangeStatus;
-	
+
 	private StatusEnum status;
 
 	public String getId() {
@@ -58,6 +63,5 @@ public class ChangeStatus {
 	public void setStatus(StatusEnum status) {
 		this.status = status;
 	}
-	
-	
+
 }

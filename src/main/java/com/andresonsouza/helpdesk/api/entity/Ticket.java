@@ -1,40 +1,42 @@
 package com.andresonsouza.helpdesk.api.entity;
 
+import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.andresonsouza.helpdesk.api.enums.PriorityEnum;
 import com.andresonsouza.helpdesk.api.enums.StatusEnum;
 
-@Entity
-@Table(name = "Tickets")
+@Document
 public class Ticket {
-	
+
 	@Id
-	@Column(name = "User")
 	private String id;
-	
+
+	@DBRef(lazy = true)
 	private User user;
-	
+
+	private Date date;
+
 	private String title;
-	
+
 	private Integer number;
-	
+
 	private StatusEnum status;
-	
+
 	private PriorityEnum priority;
-	
-	private User assingedUser;
-	
+
+	@DBRef(lazy = true)
+	private User assignedUser;
+
 	private String description;
-	
+
 	private String image;
-	
+
 	@Transient
 	private List<ChangeStatus> changes;
 
@@ -52,6 +54,14 @@ public class Ticket {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	public String getTitle() {
@@ -86,12 +96,12 @@ public class Ticket {
 		this.priority = priority;
 	}
 
-	public User getAssingedUser() {
-		return assingedUser;
+	public User getAssignedUser() {
+		return assignedUser;
 	}
 
-	public void setAssingedUser(User assingedUser) {
-		this.assingedUser = assingedUser;
+	public void setAssignedUser(User assignedUser) {
+		this.assignedUser = assignedUser;
 	}
 
 	public String getDescription() {
@@ -117,5 +127,5 @@ public class Ticket {
 	public void setChanges(List<ChangeStatus> changes) {
 		this.changes = changes;
 	}
-	
+
 }
