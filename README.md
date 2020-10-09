@@ -176,3 +176,13 @@ Vamos usar o métogo ```PUT``` passando o id e o status.
 Precisamos passar o header como em todos os outros métodos.
 
 ![](./docs/header-put-ticket.png)
+
+## Listar um resumo dos tickets
+
+Vamos usar o métogo ```GET``` passando o summary na url.
+
+![](./docs/summary-ticket.png)
+
+Precisamos passar o header como em todos os outros métodos.
+
+![](./docs/header-put-ticket.png)
