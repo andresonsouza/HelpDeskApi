@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.andresonsouza.helpdesk.api.response.Response;
+import com.andresonsouza.helpdesk.api.dto.Summary;
 import com.andresonsouza.helpdesk.api.entity.ChangeStatus;
 import com.andresonsouza.helpdesk.api.entity.Ticket;
 import com.andresonsouza.helpdesk.api.entity.User;
