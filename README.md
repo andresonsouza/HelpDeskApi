@@ -166,3 +166,13 @@ Vamos usar o métogo ```GET``` passando a página e a quantidade de tickes.
 Precisamos passar o header como em todos os outros métodos.
 
 ![](./docs/header-put-ticket.png)
+
+## Alterar o status de um ticket
+
+Vamos usar o métogo ```PUT``` passando o id e o status.
+
+![](./docs/put-status-ticket.png)
+
+Precisamos passar o header como em todos os outros métodos.
+
+![](./docs/header-put-ticket.png)
