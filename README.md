@@ -1,5 +1,44 @@
 # Help Desk Api
 
+## Passos executar a aplicação com docker
+
+* Clone o projeto;
+
+``` bash
+git clone https://github.com/andresonsouza/HelpDeskApi.git
+```
+
+* Entre no diretório do projeto;
+
+``` bash
+cd HelpDeskApi
+```
+
+* Faça o build da aplicação;
+``` bash
+./mvnw package -DskipTests
+```
+
+* Suba o banco de dados e a aplicação;
+
+``` bash
+docker-compose up -d
+```
+
+* Para parar a execução basta executar o comando abaixo na raiz do projeto.
+
+``` bash
+docker-compose down
+```
+
+## Front End do projeto
+
+O projeto front end desta Api Rest pode ser clonado no seguinte repositório.
+
+``` bash
+git clone https://github.com/andresonsouza/HelpDesk.git
+```
+
 ## Login com usuário administrador
 
 Ao criar a API criamos um usuário admin padrão.
