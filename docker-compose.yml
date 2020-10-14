@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - db-data:/data/db
+      - mongo-config:/data/configdb
+      
+  spring-boot:
+    build: .
+    image: asouza/spring-boot
+    ports:
+      - 8080:8080
+    environment:
+      - SPRING_DATA_MONGODB_HOST=mongo
+      - SPRING_DATA_MONGODB_PORT=27017
+      - SPRING_DATA_MONGODB_DATABASE=helpdesk
+    depends_on:
+      - mongo
+
+volumes:
+  db-data:
+  mongo-config:
